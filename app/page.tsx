@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion'; // 追加: Framer Motion
 
 /* =========================================
   Tech Stack: 公式カラー＆プレミアムSVGマッピング
@@ -92,6 +91,7 @@ export default function Home() {
           
           <nav className="hidden md:flex gap-8 lg:gap-12 text-sm tracking-[0.15em] text-gray-300 font-light">
             <Link href="/" className="hover:text-[#00E5FF] transition-colors duration-300">ホーム</Link>
+            {/* <Link href="/#value" className="hover:text-[#00E5FF] transition-colors duration-300">提供価値</Link> */}
             <Link href="/#solutions" className="hover:text-[#00E5FF] transition-colors duration-300">サービス</Link>
             <Link href="/#stack" className="hover:text-[#00E5FF] transition-colors duration-300">技術スタック</Link>
             <Link href="/works" className="hover:text-[#00E5FF] transition-colors duration-300">実績</Link>
@@ -109,7 +109,7 @@ export default function Home() {
       </header>
 
       {/* =========================================
-          Hero Section (Framer Motion 適用)
+          Hero Section
       ========================================= */}
       <section className="relative flex flex-col items-center justify-center min-h-screen text-center px-6 pt-24 pb-12 overflow-hidden">
         <div className="absolute inset-0 z-0 w-full h-full bg-black">
@@ -119,47 +119,27 @@ export default function Home() {
             loop 
             muted 
             playsInline 
-            className="w-full h-full object-cover opacity-50 mix-blend-screen"
+            className="w-full h-full object-cover opacity-50"
           />
           <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/80 via-black/40 to-black/90"></div>
         </div>
 
         <div className="relative z-20 flex flex-col items-center w-full mt-8">
-          <motion.p 
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-[#00E5FF] tracking-[0.3em] text-xs md:text-sm font-bold mb-6 drop-shadow-[0_0_8px_rgba(0,229,255,0.8)]"
-          >
+          <p className="text-[#00E5FF] tracking-[0.3em] text-xs md:text-sm font-bold mb-6 drop-shadow-[0_0_8px_rgba(0,229,255,0.8)]">
             THE ARCHITECTURE ENGINE
-          </motion.p>
+          </p>
           
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="text-4xl md:text-5xl lg:text-7xl font-black text-white tracking-tight font-sans mb-8 leading-tight drop-shadow-xl [font-feature-settings:'palt']"
-          >
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-white tracking-tight font-sans mb-8 leading-tight drop-shadow-xl [font-feature-settings:'palt']">
             <span className="block mb-2 md:mb-0 md:inline">「構想」を </span>
             <span className="block md:inline">「<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00E5FF] to-white">実装</span>」し、「利益」へ。</span>
-          </motion.h1>
+          </h1>
           
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.2, delay: 0.5 }}
-            className="text-gray-300 text-sm md:text-lg font-light tracking-[0.15em] max-w-3xl mb-12 leading-relaxed"
-          >
+          <p className="text-gray-300 text-sm md:text-lg font-light tracking-[0.15em] max-w-3xl mb-12 leading-relaxed">
             AIと最新のWebアーキテクチャが、あなたのビジネスから<br className="hidden md:block" />
             一切の非効率を排除し、売上を最大化する。
-          </motion.p>
+          </p>
 
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-            className="mb-12 w-full max-w-2xl"
-          >
+          <div className="mb-12 w-full max-w-2xl">
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 py-5 px-6 border-t border-b border-[#00E5FF]/20 bg-gradient-to-r from-transparent via-[#00E5FF]/5 to-transparent">
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-[#00E5FF] mb-1">50+</div>
@@ -176,14 +156,9 @@ export default function Home() {
                 <div className="text-[10px] md:text-xs text-gray-400 tracking-widest">実装期間で完成</div>
               </div>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.9 }}
-            className="mb-6"
-          >
+          <div className="mb-6">
             <Link 
               href="https://calendly.com/tamatixyan/40min" 
               target="_blank" 
@@ -191,14 +166,9 @@ export default function Home() {
             >
               無料アーキテクチャ診断を予約する
             </Link>
-          </motion.div>
+          </div>
 
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1.1 }}
-            className="mb-12 w-full max-w-2xl px-4 flex justify-center"
-          >
+          <div className="mb-12 w-full max-w-2xl px-4 flex justify-center">
             <div className="space-y-2 text-xs md:text-sm text-gray-400 font-light text-left inline-block">
               <div className="flex items-start gap-3">
                 <span className="text-[#00E5FF] font-mono">/</span>
@@ -209,36 +179,26 @@ export default function Home() {
                 <span className="tracking-wider">診断後、具体的な改善提案と実装ロードマップをその場で提供</span>
               </div>
             </div>
-          </motion.div>
+          </div>
           
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1.3 }}
-            className="flex flex-col items-center gap-1 opacity-70"
-          >
+          <div className="flex flex-col items-center gap-1 opacity-70">
             <p className="text-[#00E5FF] tracking-[0.2em] text-[10px] md:text-xs font-medium uppercase">
               Web Architect
             </p>
             <p className="text-white tracking-[0.3em] text-sm md:text-base font-light">
               田前 秀樹
             </p>
-          </motion.div>
+          </div>
         </div>
         
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.5 }}
-          className="absolute bottom-8 z-20 flex flex-col items-center gap-3 opacity-50 animate-bounce"
-        >
+        <div className="absolute bottom-8 z-20 flex flex-col items-center gap-3 opacity-50 animate-bounce">
           <span className="text-white text-[10px] tracking-[0.4em] font-light">SCROLL</span>
           <div className="w-[1px] h-8 bg-gradient-to-b from-white to-transparent"></div>
-        </motion.div>
+        </div>
       </section>
 
       {/* =========================================
-          Works Snapshot (既存維持)
+          Works Snapshot (新規追加セクション)
       ========================================= */}
       <section className="relative w-full py-24 px-6 flex justify-center bg-black border-b border-white/5 overflow-hidden">
         <div className="relative z-10 max-w-7xl w-full">
@@ -306,7 +266,7 @@ export default function Home() {
       </section>
 
       {/* =========================================
-          01. Solutions (既存維持)
+          01. Solutions
       ========================================= */}
       <section id="solutions" className="relative w-full py-40 px-6 flex justify-center bg-[#050505] overflow-hidden">
         <div className="absolute top-0 left-4 md:left-10 text-[20rem] md:text-[24rem] font-serif font-bold text-white/[0.02] select-none z-0 leading-none">02</div>
@@ -348,7 +308,7 @@ export default function Home() {
       </section>
 
       {/* =========================================
-          02. Phases (既存維持)
+          02. Phases
       ========================================= */}
       <section id="phases" className="relative w-full py-40 px-6 flex justify-center bg-[#050505] overflow-hidden">
         <div className="absolute top-0 left-4 md:left-10 text-[20rem] md:text-[24rem] font-serif font-bold text-white/[0.02] select-none z-0 leading-none">04</div>
@@ -412,8 +372,9 @@ export default function Home() {
         </div>
       </section>
 
+
       {/* =========================================
-          03. Tech Stack (既存維持)
+          03. Tech Stack
       ========================================= */}
       <section id="stack" className="relative w-full py-40 px-6 flex justify-center bg-[#030303] border-y border-white/5 overflow-hidden">
         <div className="absolute top-0 left-4 md:left-10 text-[20rem] md:text-[24rem] font-serif font-bold text-white/[0.02] select-none z-0 leading-none">03</div>
@@ -518,7 +479,7 @@ export default function Home() {
       </section>
 
       {/* =========================================
-          04. Value Proposition (既存維持)
+          04. Value Proposition
       ========================================= */}
       <section id="value" className="relative w-full py-40 px-6 flex justify-center bg-[#030303] border-t border-white/5 overflow-hidden">
         <div className="absolute top-0 left-4 md:left-10 text-[20rem] md:text-[24rem] font-serif font-bold text-white/[0.02] select-none z-0 leading-none">01</div>
@@ -558,7 +519,7 @@ export default function Home() {
       </section>
 
       {/* =========================================
-          05. Contact Header + Form (コピーの書き換え)
+          05. Contact Header + Form
       ========================================= */}
       <section id="contact" className="relative w-full py-40 px-6 flex flex-col items-center justify-center bg-black border-t border-white/10 overflow-hidden">
         <div className="absolute top-0 left-4 md:left-10 text-[20rem] md:text-[24rem] font-serif font-bold text-white/[0.02] select-none z-0 leading-none">06</div>
@@ -575,20 +536,19 @@ export default function Home() {
         <div className="relative z-10 max-w-4xl w-full text-center">
           <h3 className="text-4xl md:text-6xl font-serif text-white mb-8">まずは、ご相談から</h3>
           <p className="text-cyan-500 text-xs md:text-sm tracking-[0.4em] uppercase mb-16 font-semibold">Get In Touch</p>
-          <p className="text-base md:text-xl text-gray-400 font-light leading-relaxed mb-16">
+          <p className="text-base md:text-xl text-gray-400 font-light leading-relaxed mb-20">
             技術的な課題、AIエージェントの導入、Web3エコシステムの構築など、<br className="hidden md:block"/>
             あなたのビジネスの課題を診断し、最適なアーキテクチャを提案します。
           </p>
-          
-          <div className="text-white text-base md:text-xl font-light tracking-widest leading-relaxed opacity-90 mb-12 border-l border-r border-cyan-500/30 px-6 inline-block">
-          「あなたの『問い』を、明日を創る設計図へ」
+          <div className="text-white text-base md:text-lg font-light tracking-widest leading-relaxed opacity-80 mb-8">
+            「あなたの『問い』を、明日を創る設計図へ」
           </div>
           
           <Link 
             href="https://calendly.com/tamatixyan/40min" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="block w-full"
+            className="block mt-12 w-full"
           >
             <button 
               type="button" 
@@ -600,24 +560,38 @@ export default function Home() {
         </div> 
       </section>
       
-      {/* =========================================
-          Footer (ロゴの追加)
+     {/* =========================================
+          Footer (100-Point Optimized)
       ========================================= */}
-      <footer className="w-full bg-black py-16 px-8 border-t border-gray-900/50">
-        <div className="flex flex-col items-center justify-center gap-6">
-          <div className="text-center flex flex-col items-center">
-            {/* モノクローム化したロゴ */}
+      <footer className="w-full bg-[#030303] py-20 px-8 border-t border-white/5 relative overflow-hidden">
+        
+        <div className="relative z-10 flex flex-col items-center justify-center gap-10 max-w-7xl mx-auto">
+          
+          {/* ロゴ & ブランドネーム - 透明度とコントラストの最適化 */}
+          <Link href="/" className="flex flex-col items-center gap-6 group cursor-pointer">
             <img 
               src="/noirlogo.png" 
               alt="Tech Noir Logo" 
-              className="h-10 w-auto mb-4 opacity-40 grayscale" 
+              className="h-12 w-auto grayscale opacity-50 group-hover:opacity-80 transition-all duration-700" 
             />
-            <h2 className="text-white font-serif text-lg tracking-[0.2em] mb-1">Tech Noir</h2>
-            <p className="text-gray-700 text-[10px] tracking-[0.3em] uppercase">Solving Business Inefficiencies with AI.</p>
+            <h2 className="text-gray-500 font-sans font-light text-xl tracking-[0.3em] group-hover:text-gray-300 transition-colors duration-700">
+              Tech Noir
+            </h2>
+          </Link>
+
+          {/* ディバイダー - 主張を極限まで抑えつつ、領域を美しく区切る */}
+          <div className="w-12 h-[1px] bg-white/10"></div>
+
+          {/* タグライン & コピーライト - 信頼を担保する可読性(text-gray-500/600)の確保 */}
+          <div className="text-center space-y-6">
+            <p className="text-gray-500 text-xs tracking-[0.4em] uppercase font-medium">
+              Solving Business Inefficiencies with AI.
+            </p>
+            <div className="text-gray-600 text-[10px] tracking-[0.3em] font-light">
+              &copy; 2026 Hideki Tamae. All rights reserved.
+            </div>
           </div>
-          <div className="text-gray-800 text-[10px] tracking-[0.2em] mt-4">
-            &copy; 2026 Hideki Tamae. All rights reserved.
-          </div>
+
         </div>
       </footer>
     </main>
