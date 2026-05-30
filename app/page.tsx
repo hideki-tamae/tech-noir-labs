@@ -1,6 +1,56 @@
 "use client";
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Particles from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
+
+/* =========================================
+  1. 専門用語ツールチップ (Terminology Tooltip)
+========================================= */
+const Term = ({ word, desc }: { word: string, desc: string }) => (
+  <span className="relative group inline-block cursor-help font-medium text-cyan-100 border-b border-cyan-500/40 border-dashed hover:border-cyan-400 hover:text-cyan-400 transition-colors duration-300">
+    {word}
+    <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-64 p-4 bg-[#050505] border border-cyan-500/30 text-xs text-gray-300 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-50 text-left shadow-[0_0_20px_rgba(0,229,255,0.15)] break-words leading-relaxed whitespace-normal font-sans">
+      <span className="block text-cyan-500 font-bold mb-1">{word}</span>
+      {desc}
+    </span>
+  </span>
+);
+
+/* =========================================
+  2. サイバーパンク・パーティクル背景
+========================================= */
+const ParticlesBackground = () => {
+  const particlesInit = async (engine: any) => {
+    await loadSlim(engine);
+  };
+
+  return (
+    <Particles
+      id="tsparticles"
+      init={particlesInit}
+      className="absolute inset-0 z-15 opacity-40 pointer-events-auto"
+      options={{
+        background: { color: { value: "transparent" } },
+        fpsLimit: 60,
+        interactivity: {
+          events: { onHover: { enable: true, mode: "grab" } },
+          modes: { grab: { distance: 200, links: { opacity: 0.5, color: "#00E5FF" } } },
+        },
+        particles: {
+          color: { value: "#00E5FF" },
+          links: { color: "#00E5FF", distance: 150, enable: true, opacity: 0.2, width: 1 },
+          move: { enable: true, speed: 0.6, direction: "none", random: true, straight: false, outModes: "out" },
+          number: { density: { enable: true, area: 800 }, value: 50 },
+          opacity: { value: 0.3 },
+          shape: { type: "circle" },
+          size: { value: { min: 1, max: 2 } },
+        },
+        detectRetina: true,
+      }}
+    />
+  );
+};
 
 /* =========================================
   Tech Stack: 公式カラー＆プレミアムSVGマッピング
@@ -124,7 +174,10 @@ export default function Home() {
           <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/80 via-black/40 to-black/90"></div>
         </div>
 
-        <div className="relative z-20 flex flex-col items-center w-full mt-8">
+        {/* サイバーパンク・パーティクル */}
+        <ParticlesBackground />
+
+        <div className="relative z-20 flex flex-col items-center w-full mt-8 pointer-events-none">
           <p className="text-[#00E5FF] tracking-[0.3em] text-xs md:text-sm font-bold mb-6 drop-shadow-[0_0_8px_rgba(0,229,255,0.8)]">
             THE ARCHITECTURE ENGINE
           </p>
@@ -158,7 +211,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mb-6">
+          <div className="mb-6 pointer-events-auto">
             <Link 
               href="https://calendly.com/tamatixyan/40min" 
               target="_blank" 
@@ -168,7 +221,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="mb-12 w-full max-w-2xl px-4 flex justify-center">
+          <div className="mb-12 w-full max-w-2xl px-4 flex justify-center pointer-events-auto">
             <div className="space-y-2 text-xs md:text-sm text-gray-400 font-light text-left inline-block">
               <div className="flex items-start gap-3">
                 <span className="text-[#00E5FF] font-mono">/</span>
@@ -211,7 +264,9 @@ export default function Home() {
             {/* Case 1 */}
             <div className="bg-[#080808] border border-white/10 p-8 hover:border-cyan-500/30 transition-all duration-300 group">
               <div className="text-gray-500 text-xs tracking-widest mb-4">Case 1: SaaS企業</div>
-              <h3 className="text-white text-xl font-serif mb-6 group-hover:text-cyan-400 transition-colors">Web + AIエージェント</h3>
+              <h3 className="text-white text-xl font-serif mb-6 group-hover:text-cyan-400 transition-colors">
+                Web + <Term word="AIエージェント" desc="人間の指示を待たず、自律的に思考・計画・実行を行う高度なAI。24時間稼働するデジタル労働力。" />
+              </h3>
               <div className="space-y-3">
                 <div className="flex justify-between items-center border-b border-white/5 pb-2">
                   <span className="text-gray-400 text-sm">成果</span>
@@ -243,7 +298,9 @@ export default function Home() {
             {/* Case 3 */}
             <div className="bg-[#080808] border border-white/10 p-8 hover:border-cyan-500/30 transition-all duration-300 group">
               <div className="text-gray-500 text-xs tracking-widest mb-4">Case 3: 金融スタートアップ</div>
-              <h3 className="text-white text-xl font-serif mb-6 group-hover:text-cyan-400 transition-colors">Web3 統合</h3>
+              <h3 className="text-white text-xl font-serif mb-6 group-hover:text-cyan-400 transition-colors">
+                <Term word="Web3" desc="ブロックチェーン技術を基盤とした分散型インターネット。改ざん耐性と透明性を持つ次世代構造。" /> 統合
+              </h3>
               <div className="space-y-3">
                 <div className="flex justify-between items-center border-b border-white/5 pb-2">
                   <span className="text-gray-400 text-sm">成果</span>
@@ -257,9 +314,14 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="mt-12 text-center">
+          {/* マイクロCTA (リード獲得導線) */}
+          <div className="mt-16 flex flex-col sm:flex-row justify-center items-center gap-6">
             <Link href="/works" className="text-gray-400 hover:text-cyan-400 text-sm tracking-widest transition-colors flex items-center justify-center gap-2">
               全ての実績を見る <span className="font-mono">{'>'}</span>
+            </Link>
+            <div className="hidden sm:block w-[1px] h-4 bg-white/20"></div>
+            <Link href="https://calendly.com/tamatixyan/40min" target="_blank" className="group flex items-center gap-2 px-6 py-2 border border-cyan-500/30 bg-cyan-500/5 hover:bg-cyan-500/20 text-cyan-400 text-sm tracking-widest transition-all duration-300">
+              自社に同等の成果を実装する <span className="font-mono group-hover:translate-x-1 transition-transform">{'>'}</span>
             </Link>
           </div>
         </div>
@@ -285,7 +347,7 @@ export default function Home() {
                 <h3 className="text-2xl md:text-4xl text-white font-serif mb-6 leading-tight break-keep whitespace-nowrap">デジタルプレゼンス構築</h3>
                 <p className="text-cyan-600 text-xs md:text-sm tracking-[0.2em] mb-10 uppercase font-medium">Digital Foundation</p>
                 <p className="text-sm md:text-base text-gray-400 font-light leading-loose flex-grow">
-                  検索から成約までの「勝てる土台」の実装。高品質なWeb/LP制作、心を動かすセールスコピーライティング、精度を追求した基礎SEOを完全に統合します。
+                  検索から成約までの「勝てる土台」の実装。高品質なWeb/LP制作、心を動かすセールスコピーライティング、精度を追求した基礎<Term word="SEO" desc="Search Engine Optimization。Google検索で上位表示させ、質の高い見込み客を継続的に自動集客する仕組み。" />を完全に統合します。
                 </p>
               </div>
             </div>
@@ -294,15 +356,23 @@ export default function Home() {
                 <h3 className="text-2xl md:text-4xl text-white font-serif mb-6 leading-tight break-keep whitespace-nowrap">次世代ビジネス実装</h3>
                 <p className="text-cyan-600 text-xs md:text-sm tracking-[0.2em] mb-10 uppercase font-medium">Next-Gen Integration</p>
                 <p className="text-sm md:text-base text-gray-400 font-light leading-loose flex-grow">
-                  最先端テクノロジーによる業務の自動化と拡張。Web制作を基盤とし、AIエージェントの導入、またはWeb3統合を一気通貫で実行します。
+                  最先端テクノロジーによる業務の自動化と拡張。Web制作を基盤とし、<Term word="AIエージェント" desc="人間の指示を待たず、自律的に思考・計画・実行を行う高度なAI。24時間稼働するデジタル労働力。" />の導入、または<Term word="Web3" desc="ブロックチェーン技術を基盤とした分散型インターネット。改ざん耐性と透明性を持つ次世代構造。" />統合を一気通貫で実行します。
                 </p>
               </div>
             </div>
           </div>
-          <div className="text-center">
+
+          <div className="text-center mb-12">
             <p className="text-gray-400 text-sm md:text-lg font-light leading-loose">
-              UI/UXデザイン / 高度なSEO対策 / 動画・楽曲制作 / KDP出版ファネル構築など、<br className="hidden md:block"/>個別の課題に合わせた「アラカルト（モジュール）実装」も柔軟に対応可能です。
+              <Term word="UI/UX" desc="ユーザーインターフェース(視覚)とユーザーエクスペリエンス(体験)。顧客がシステムに触れる際の使い心地と感動を設計する技術。" />デザイン / 高度なSEO対策 / 動画・楽曲制作 / KDP出版ファネル構築など、<br className="hidden md:block"/>個別の課題に合わせた「アラカルト（モジュール）実装」も柔軟に対応可能です。
             </p>
+          </div>
+
+          {/* マイクロCTA (リード獲得導線) */}
+          <div className="text-center">
+            <Link href="https://calendly.com/tamatixyan/40min" target="_blank" className="group inline-flex items-center gap-2 px-8 py-3 border border-cyan-500/50 bg-cyan-500/10 hover:bg-cyan-500 hover:text-black text-cyan-400 font-medium text-sm tracking-widest transition-all duration-300">
+              自社に最適なアーキテクチャを相談する <span className="font-mono group-hover:translate-x-1 transition-transform">{'>'}</span>
+            </Link>
           </div>
         </div>
       </section>
@@ -371,7 +441,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
 
       {/* =========================================
           03. Tech Stack
