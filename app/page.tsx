@@ -1,8 +1,6 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import Particles from "@tsparticles/react";
-import { loadSlim } from "@tsparticles/slim";
 
 /* =========================================
   1. 専門用語ツールチップ (Terminology Tooltip)
@@ -18,38 +16,104 @@ const Term = ({ word, desc }: { word: string, desc: string }) => (
 );
 
 /* =========================================
-  2. サイバーパンク・パーティクル背景
+  2. ネイティブ・サイバーパンク・パーティクル (依存関係ゼロ)
 ========================================= */
-const ParticlesBackground = () => {
-  const particlesInit = async (engine: any) => {
-    await loadSlim(engine);
-  };
+const NativeParticles = () => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
 
-  return (
-    <Particles
-      id="tsparticles"
-      init={particlesInit}
-      className="absolute inset-0 z-15 opacity-40 pointer-events-auto"
-      options={{
-        background: { color: { value: "transparent" } },
-        fpsLimit: 60,
-        interactivity: {
-          events: { onHover: { enable: true, mode: "grab" } },
-          modes: { grab: { distance: 200, links: { opacity: 0.5, color: "#00E5FF" } } },
-        },
-        particles: {
-          color: { value: "#00E5FF" },
-          links: { color: "#00E5FF", distance: 150, enable: true, opacity: 0.2, width: 1 },
-          move: { enable: true, speed: 0.6, direction: "none", random: true, straight: false, outModes: "out" },
-          number: { density: { enable: true, area: 800 }, value: 50 },
-          opacity: { value: 0.3 },
-          shape: { type: "circle" },
-          size: { value: { min: 1, max: 2 } },
-        },
-        detectRetina: true,
-      }}
-    />
-  );
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let particles: { x: number, y: number, vx: number, vy: number, size: number }[] = [];
+    let mouse = { x: -9999, y: -9999 };
+
+    // 親要素に合わせてキャンバスサイズを調整
+    const resize = () => {
+      if (canvas.parentElement) {
+        canvas.width = canvas.parentElement.offsetWidth;
+        canvas.height = canvas.parentElement.offsetHeight;
+      }
+    };
+    window.addEventListener('resize', resize);
+    resize();
+
+    // パーティクルの初期化
+    for (let i = 0; i < 60; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.8,
+        vy: (Math.random() - 0.5) * 0.8,
+        size: Math.random() * 1.5 + 0.5
+      });
+    }
+
+    // マウス追従
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+
+    // 描画ループ
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      particles.forEach(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+        // ドットの描画
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(0, 229, 255, 0.6)';
+        ctx.fill();
+
+        // マウスとドットの距離を計算して線を引く
+        const dx = mouse.x - p.x;
+        const dy = mouse.y - p.y;
+        const distToMouse = Math.sqrt(dx * dx + dy * dy);
+        if (distToMouse < 150) {
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.strokeStyle = `rgba(0, 229, 255, ${1 - distToMouse / 150})`;
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
+
+        // ドット同士の距離を計算して線を引く
+        particles.forEach(p2 => {
+          const pdx = p.x - p2.x;
+          const pdy = p.y - p2.y;
+          const pdist = Math.sqrt(pdx * pdx + pdy * pdy);
+          if (pdist < 80) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.strokeStyle = `rgba(0, 229, 255, ${0.15 - (pdist / 80) * 0.15})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        });
+      });
+      requestAnimationFrame(animate);
+    };
+    animate();
+
+    return () => {
+      window.removeEventListener('resize', resize);
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
+  return <canvas ref={canvasRef} className="absolute inset-0 z-[15] pointer-events-none mix-blend-screen opacity-70" />;
 };
 
 /* =========================================
@@ -175,7 +239,7 @@ export default function Home() {
         </div>
 
         {/* サイバーパンク・パーティクル */}
-        <ParticlesBackground />
+        <NativeParticles />
 
         <div className="relative z-20 flex flex-col items-center w-full mt-8 pointer-events-none">
           <p className="text-[#00E5FF] tracking-[0.3em] text-xs md:text-sm font-bold mb-6 drop-shadow-[0_0_8px_rgba(0,229,255,0.8)]">
