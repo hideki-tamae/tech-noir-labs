@@ -208,7 +208,7 @@ export default function Home() {
             {/* <Link href="/#value" className="hover:text-[#00E5FF] transition-colors duration-300">提供価値</Link> */}
             <Link href="/#solutions" className="hover:text-[#00E5FF] transition-colors duration-300">サービス</Link>
             <Link href="/#stack" className="hover:text-[#00E5FF] transition-colors duration-300">技術スタック</Link>
-            <Link href="/works" className="hover:text-[#00E5FF] transition-colors duration-300">実績</Link>
+            <Link href="/proof" className="hover:text-[#00E5FF] transition-colors duration-300">実績</Link>
             <Link href="/company" className="hover:text-[#00E5FF] transition-colors duration-300">企業概要</Link>
           </nav>
           
