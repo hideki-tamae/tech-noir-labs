@@ -121,12 +121,12 @@ const NativeParticles = () => {
 ========================================= */
 const techData: Record<string, { url?: string; svg?: React.ReactNode; invert?: boolean }> = {
   "Cursor": { url: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/cursor.svg", invert: true },
-  "VS Code": { url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" },
   "OpenAI": { url: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/openai.svg", invert: true },
   "Anthropic": { url: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/anthropic.svg", invert: true },
   "Gemini": { svg: <svg viewBox="0 0 24 24" className="w-10 h-10"><defs><linearGradient id="geminiGlow" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stopColor="#FFFFFF" /><stop offset="100%" stopColor="#FFFFFF" /></linearGradient></defs><path d="M12 2C12 7.5 7.5 12 2 12C7.5 12 12 16.5 12 22C12 16.5 16.5 12 22 12C16.5 12 12 7.5 12 2Z" fill="url(#geminiGlow)"/></svg> },
-  "CrewAI": { url: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/crewai.svg", invert: true },
   "LangGraph": { url: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/langgraph.svg", invert: true },
+  "CrewAI": { url: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/crewai.svg", invert: true },
+
   "n8n": { url: "https://cdn.simpleicons.org/n8n/FF6C37" },
   "Supabase": { url: "https://cdn.simpleicons.org/supabase/3ECF8E" },
   "Dify": { url: "https://cdn.simpleicons.org/dify/1C64F2" },
@@ -509,40 +509,39 @@ export default function Home() {
       {/* =========================================
           03. Tech Stack
       ========================================= */}
-      <section id="stack" className="relative w-full py-40 px-6 flex justify-center bg-[#030303] border-y border-white/5 overflow-hidden">
-        <div className="absolute top-0 left-4 md:left-10 text-[20rem] md:text-[24rem] font-serif font-bold text-white/[0.02] select-none z-0 leading-none">03</div>
-        
-        <div className="relative z-10 max-w-7xl w-full">
-          <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 mb-24">
-            <span className="text-cyan-500 font-serif text-4xl md:text-6xl">03.</span>
-            <h2 className="text-3xl md:text-6xl tracking-[0.2em] text-white uppercase font-light">Tech Stack</h2>
-            <div className="hidden md:block h-[1px] flex-grow bg-white/10" />
-            <span className="text-gray-400 text-base md:text-lg tracking-widest whitespace-nowrap">アーキテクチャ基盤</span>
-          </div>
-
-          <div className="space-y-24">
+                <section id="stack" className="relative w-full py-40 px-6 flex justify-center bg-[#030303] border-y border-white/5 overflow-hidden">
+                  <div className="absolute top-0 left-4 md:left-10 text-[20rem] md:text-[24rem] font-serif font-bold text-white/[0.02] select-none z-0 leading-none">03</div>
+                  
+                  <div className="relative z-10 max-w-7xl w-full">
+                    <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 mb-24">
+                      <span className="text-cyan-500 font-serif text-4xl md:text-6xl">03.</span>
+                      <h2 className="text-3xl md:text-6xl tracking-[0.2em] text-white uppercase font-light">Tech Stack</h2>
+                      <div className="hidden md:block h-[1px] flex-grow bg-white/10" />
+                      <span className="text-gray-400 text-base md:text-lg tracking-widest whitespace-nowrap">アーキテクチャ基盤</span>
+                    </div>
+                    <div className="space-y-24 max-w-6xl mx-auto">
             <div>
               <div className="flex items-end gap-6 mb-10 border-b border-white/10 pb-4">
                 <span className="text-cyan-700 text-xl font-serif">01</span>
-                <h3 className="text-white text-2xl tracking-widest">AI-Native & Agents</h3>
+                <h3 className="text-white text-2xl tracking-widest uppercase">AI-Native & Agents</h3>
               </div>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:flex lg:flex-wrap lg:justify-center gap-4 lg:gap-6 [&>*]:lg:w-[150px] [&>*]:xl:w-[170px]">
                 <TechIcon name="Cursor" />
-                <TechIcon name="VS Code" />
                 <TechIcon name="OpenAI" />
                 <TechIcon name="Anthropic" />
                 <TechIcon name="Gemini" />
-                <TechIcon name="CrewAI" />
                 <TechIcon name="LangGraph" />
+                <TechIcon name="CrewAI" />
+                
               </div>
             </div>
 
             <div>
               <div className="flex items-end gap-6 mb-10 border-b border-white/10 pb-4">
                 <span className="text-cyan-700 text-xl font-serif">02</span>
-                <h3 className="text-white text-2xl tracking-widest">Automation & Data</h3>
+                <h3 className="text-white text-2xl tracking-widest uppercase">Automation & Data</h3>
               </div>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:flex lg:flex-wrap lg:justify-center gap-4 lg:gap-6 [&>*]:lg:w-[150px] [&>*]:xl:w-[170px]">
                 <TechIcon name="n8n" />
                 <TechIcon name="Supabase" />
                 <TechIcon name="Dify" />
@@ -554,9 +553,9 @@ export default function Home() {
             <div>
               <div className="flex items-end gap-6 mb-10 border-b border-white/10 pb-4">
                 <span className="text-cyan-700 text-xl font-serif">03</span>
-                <h3 className="text-white text-2xl tracking-widest">Languages & Frameworks</h3>
+                <h3 className="text-white text-2xl tracking-widest uppercase">Languages & Frameworks</h3>
               </div>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:flex lg:flex-wrap lg:justify-center gap-4 lg:gap-6 [&>*]:lg:w-[150px] [&>*]:xl:w-[170px]">
                 <TechIcon name="Ruby on Rails" />
                 <TechIcon name="Python" />
                 <TechIcon name="Next.js" />
@@ -568,9 +567,9 @@ export default function Home() {
             <div>
               <div className="flex items-end gap-6 mb-10 border-b border-white/10 pb-4">
                 <span className="text-cyan-700 text-xl font-serif">04</span>
-                <h3 className="text-white text-2xl tracking-widest">Infrastructure & DevOps</h3>
+                <h3 className="text-white text-2xl tracking-widest uppercase">Infrastructure & DevOps</h3>
               </div>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:flex lg:flex-wrap lg:justify-center gap-4 lg:gap-6 [&>*]:lg:w-[150px] [&>*]:xl:w-[170px]">
                 <TechIcon name="Docker" />
                 <TechIcon name="Vercel" />
                 <TechIcon name="Render" />
@@ -582,9 +581,9 @@ export default function Home() {
             <div>
               <div className="flex items-end gap-6 mb-10 border-b border-white/10 pb-4">
                 <span className="text-cyan-700 text-xl font-serif">05</span>
-                <h3 className="text-white text-2xl tracking-widest">Web3 & Decentralization</h3>
+                <h3 className="text-white text-2xl tracking-widest uppercase">Web3 & Decentralization</h3>
               </div>
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:flex lg:flex-wrap lg:justify-center gap-4 lg:gap-6 [&>*]:lg:w-[150px] [&>*]:xl:w-[170px]">
                 <TechIcon name="Ethereum" />
                 <TechIcon name="Solidity" />
                 <TechIcon name="Alchemy" />
@@ -596,9 +595,9 @@ export default function Home() {
             <div>
               <div className="flex items-end gap-6 mb-10 border-b border-white/10 pb-4">
                 <span className="text-cyan-700 text-xl font-serif">06</span>
-                <h3 className="text-white text-2xl tracking-widest">Creative, Ops & CRM</h3>
+                <h3 className="text-white text-2xl tracking-widest uppercase">Creative, Ops & CRM</h3>
               </div>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:flex lg:flex-wrap lg:justify-center gap-4 lg:gap-6 [&>*]:lg:w-[150px] [&>*]:xl:w-[170px]">
                 <TechIcon name="Photoshop / XD" />
                 <TechIcon name="Figma" />
                 <TechIcon name="WordPress" />
@@ -606,7 +605,6 @@ export default function Home() {
                 <TechIcon name="HubSpot" />
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -705,7 +703,7 @@ export default function Home() {
             <img 
               src="/noirlogo.png" 
               alt="Tech Noir Logo" 
-              className="h-12 w-auto grayscale opacity-50 group-hover:opacity-80 transition-all duration-700" 
+              className="h-12 w-auto transition-all duration-700 ease-out opacity-25 brightness-[0.4] grayscale group-hover:opacity-100 group-hover:brightness-110 group-hover:grayscale-0 group-hover:drop-shadow-[0_0_15px_rgba(45,212,191,0.6)]" 
             />
             <h2 className="text-gray-500 font-sans font-light text-xl tracking-[0.3em] group-hover:text-gray-300 transition-colors duration-700">
               Tech Noir
