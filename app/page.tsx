@@ -315,70 +315,72 @@ export default function Home() {
       </section>
 
       {/* =========================================
-          Works Snapshot (新規追加セクション)
+          Works Snapshot (修正済み・統合版)
       ========================================= */}
       <section className="relative w-full py-24 px-6 flex justify-center bg-black border-b border-white/5 overflow-hidden">
         <div className="relative z-10 max-w-7xl w-full">
           <div className="text-center mb-16">
-            <p className="text-cyan-500 text-xs tracking-[0.3em] uppercase mb-4 font-semibold">Recent Works</p>
-            <h2 className="text-2xl md:text-3xl text-white font-serif tracking-[0.15em] font-light">最近の実績</h2>
+            <p className="text-cyan-500 text-xs tracking-[0.3em] uppercase mb-4 font-semibold">Manifesto & Impact</p>
+            <h2 className="text-2xl md:text-3xl text-white font-serif tracking-[0.15em] font-light">実装された未来</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Case 1 */}
             <div className="bg-[#080808] border border-white/10 p-8 hover:border-cyan-500/30 transition-all duration-300 group">
-              <div className="text-gray-500 text-xs tracking-widest mb-4">Case 1: SaaS企業</div>
+              <div className="text-gray-500 text-xs tracking-widest mb-4">Case 01: SaaS Scaling</div>
               <h3 className="text-white text-xl font-serif mb-6 group-hover:text-cyan-400 transition-colors">
-                Web + <Term word="AIエージェント" desc="人間の指示を待たず、自律的に思考・計画・実行を行う高度なAI。24時間稼働するデジタル労働力。" />
+                <Term word="認知資本" desc="AIを単なるツールではなく、意志決定を拡張する自律的なパートナーとして組織に実装。" /> の解放
               </h3>
               <div className="space-y-3">
                 <div className="flex justify-between items-center border-b border-white/5 pb-2">
                   <span className="text-gray-400 text-sm">成果</span>
-                  <span className="text-cyan-400 font-bold tracking-wider">売上 2.3倍向上</span>
+                  <span className="text-cyan-400 font-bold tracking-wider">収益成長率 2.3x</span>
                 </div>
                 <div className="flex justify-between items-center pb-2">
-                  <span className="text-gray-400 text-sm">期間</span>
-                  <span className="text-white font-light tracking-wider">3ヶ月で実装完了</span>
+                  <span className="text-gray-400 text-sm">変容</span>
+                  <span className="text-white font-light tracking-wider">自律型収益基盤の確立</span>
                 </div>
               </div>
             </div>
 
             {/* Case 2 */}
             <div className="bg-[#080808] border border-white/10 p-8 hover:border-cyan-500/30 transition-all duration-300 group">
-              <div className="text-gray-500 text-xs tracking-widest mb-4">Case 2: EC企業</div>
-              <h3 className="text-white text-xl font-serif mb-6 group-hover:text-cyan-400 transition-colors">Web + AI自動化</h3>
+              <div className="text-gray-500 text-xs tracking-widest mb-4">Case 02: EC Efficiency</div>
+              <h3 className="text-white text-xl font-serif mb-6 group-hover:text-cyan-400 transition-colors">
+                <Term word="摩擦ゼロ" desc="非効率な手作業を排除し、人間の創造性が最大限に発揮されるシステムフローを設計。" /> の組織設計
+              </h3>
               <div className="space-y-3">
                 <div className="flex justify-between items-center border-b border-white/5 pb-2">
                   <span className="text-gray-400 text-sm">成果</span>
-                  <span className="text-cyan-400 font-bold tracking-wider">営業工数 60%削減</span>
+                  <span className="text-cyan-400 font-bold tracking-wider">工数 60% 削減</span>
                 </div>
                 <div className="flex justify-between items-center pb-2">
-                  <span className="text-gray-400 text-sm">期間</span>
-                  <span className="text-white font-light tracking-wider">2ヶ月で実装完了</span>
+                  <span className="text-gray-400 text-sm">変容</span>
+                  <span className="text-white font-light tracking-wider">クリエイティブへの回帰</span>
                 </div>
               </div>
             </div>
 
             {/* Case 3 */}
             <div className="bg-[#080808] border border-white/10 p-8 hover:border-cyan-500/30 transition-all duration-300 group">
-              <div className="text-gray-500 text-xs tracking-widest mb-4">Case 3: 金融スタートアップ</div>
+              <div className="text-gray-500 text-xs tracking-widest mb-4">Case 03: FinTech Trust</div>
               <h3 className="text-white text-xl font-serif mb-6 group-hover:text-cyan-400 transition-colors">
-                <Term word="Web3" desc="ブロックチェーン技術を基盤とした分散型インターネット。改ざん耐性と透明性を持つ次世代構造。" /> 統合
+                <Term word="信頼の経済学" desc="透明性と改ざん耐性を担保するWeb3構造により、ユーザーとのエンゲージメントを本質的に強化。" /> への移行
               </h3>
               <div className="space-y-3">
                 <div className="flex justify-between items-center border-b border-white/5 pb-2">
                   <span className="text-gray-400 text-sm">成果</span>
-                  <span className="text-cyan-400 font-bold tracking-wider">ユーザー数 10倍増</span>
+                  <span className="text-cyan-400 font-bold tracking-wider">ユーザー 10x 拡大</span>
                 </div>
                 <div className="flex justify-between items-center pb-2">
-                  <span className="text-gray-400 text-sm">期間</span>
-                  <span className="text-white font-light tracking-wider">4ヶ月で実装完了</span>
+                  <span className="text-gray-400 text-sm">変容</span>
+                  <span className="text-white font-light tracking-wider">改ざん不可能な信頼基盤</span>
                 </div>
               </div>
             </div>
           </div>
-          
-          {/* マイクロCTA (リード獲得導線) */}
+
+          {/* Micro CTA */}
           <div className="mt-16 flex flex-col sm:flex-row justify-center items-center gap-6">
             <Link href="/works" className="text-gray-400 hover:text-cyan-400 text-sm tracking-widest transition-colors flex items-center justify-center gap-2">
               全ての実績を見る <span className="font-mono">{'>'}</span>
@@ -700,11 +702,11 @@ export default function Home() {
           
           {/* ロゴ & ブランドネーム - 透明度とコントラストの最適化 */}
           <Link href="/" className="flex flex-col items-center gap-6 group cursor-pointer">
-            <img 
-              src="/noirlogo.png" 
-              alt="Tech Noir Logo" 
-              className="h-12 w-auto transition-all duration-700 ease-out opacity-25 brightness-[0.4] grayscale group-hover:opacity-100 group-hover:brightness-110 group-hover:grayscale-0 group-hover:drop-shadow-[0_0_15px_rgba(45,212,191,0.6)]" 
-            />
+          <img 
+  src="/noirlogo.png" 
+  alt="Tech Noir Logo" 
+  className="h-12 w-auto transition-all duration-700 ease-out opacity-35 brightness-[0.5] grayscale group-hover:opacity-100 group-hover:brightness-100 group-hover:grayscale-0 group-hover:drop-shadow-[0_0_12px_rgba(45,212,191,0.5)]" 
+/>
             <h2 className="text-gray-500 font-sans font-light text-xl tracking-[0.3em] group-hover:text-gray-300 transition-colors duration-700">
               Tech Noir
             </h2>
