@@ -124,14 +124,14 @@ const techData: Record<string, { url?: string; svg?: React.ReactNode; invert?: b
   "OpenAI": { url: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/openai.svg", invert: true },
   "Anthropic": { url: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/anthropic.svg", invert: true },
   "Gemini": { svg: <svg viewBox="0 0 24 24" className="w-10 h-10"><defs><linearGradient id="geminiGlow" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stopColor="#FFFFFF" /><stop offset="100%" stopColor="#FFFFFF" /></linearGradient></defs><path d="M12 2C12 7.5 7.5 12 2 12C7.5 12 12 16.5 12 22C12 16.5 16.5 12 22 12C16.5 12 12 7.5 12 2Z" fill="url(#geminiGlow)"/></svg> },
-  "LangGraph": { url: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/langgraph.svg", invert: true },
+  "LangGraph": { url: "public/assets/images/langgraph-icon.svg", invert: true },
   "CrewAI": { url: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/crewai.svg", invert: true },
 
   "n8n": { url: "https://cdn.simpleicons.org/n8n/FF6C37" },
   "Supabase": { url: "https://cdn.simpleicons.org/supabase/3ECF8E" },
   "Dify": { url: "https://cdn.simpleicons.org/dify/1C64F2" },
   "Stripe": { url: "https://cdn.simpleicons.org/stripe/635BFF" },
-  "LangChain": { url: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/langchain.svg", invert: true },
+  "LangChain": { url: "public/assets/images/langchain-color-icon.svg", invert: false },
   "Ruby on Rails": { url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ruby/ruby-original.svg" },
   "Python": { url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
   "Next.js": { svg: <svg viewBox="0 0 180 180" className="w-12 h-12"><circle cx="90" cy="90" r="90" fill="#000000" /><path d="M149.508 157.619L69.142 54H54V125.97H66.1136V69.3836L139.999 164.845C143.333 162.614 146.509 160.218 149.508 157.619Z" fill="url(#paint0_linear)"/><path d="M115.265 54H127.379V125.97H115.265V54Z" fill="#FFFFFF"/><defs><linearGradient id="paint0_linear" x1="109" y1="116.5" x2="144.5" y2="160.5" gradientUnits="userSpaceOnUse"><stop stopColor="#FFFFFF"/><stop offset="1" stopColor="#FFFFFF" stopOpacity="0"/></linearGradient></defs></svg> },
@@ -654,7 +654,7 @@ export default function Home() {
       {/* =========================================
           05. Contact Header + Form
       ========================================= */}
-      <section id="contact" className="relative w-full py-40 px-6 flex flex-col items-center justify-center bg-black border-t border-white/10 overflow-hidden">
+      <section id="contact" className="relative w-full pt-40 pb-16 px-6 flex flex-col items-center justify-center bg-black border-t border-white/10 overflow-hidden">
         <div className="absolute top-0 left-4 md:left-10 text-[20rem] md:text-[24rem] font-serif font-bold text-white/[0.02] select-none z-0 leading-none">06</div>
         
         <div className="relative z-10 w-full max-w-7xl mb-20">
@@ -696,10 +696,8 @@ export default function Home() {
      {/* =========================================
           Footer (100-Point Optimized)
       ========================================= */}
-      <footer className="w-full bg-[#030303] py-20 px-8 border-t border-white/5 relative overflow-hidden">
-        
+      <footer className="w-full bg-black border-t border-white/10 py-20 px-6 flex flex-col items-center justify-center">         
         <div className="relative z-10 flex flex-col items-center justify-center gap-10 max-w-7xl mx-auto">
-          
           {/* ロゴ & ブランドネーム - 透明度とコントラストの最適化 */}
           <Link href="/" className="flex flex-col items-center gap-6 group cursor-pointer">
           <img 
