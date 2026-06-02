@@ -382,7 +382,7 @@ export default function Home() {
 
           {/* Micro CTA */}
           <div className="mt-16 flex flex-col sm:flex-row justify-center items-center gap-6">
-            <Link href="/works" className="text-gray-400 hover:text-cyan-400 text-sm tracking-widest transition-colors flex items-center justify-center gap-2">
+            <Link href="/proof" className="text-gray-400 hover:text-cyan-400 text-sm tracking-widest transition-colors flex items-center justify-center gap-2">
               全ての実績を見る <span className="font-mono">{'>'}</span>
             </Link>
             <div className="hidden sm:block w-[1px] h-4 bg-white/20"></div>
