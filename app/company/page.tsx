@@ -226,14 +226,15 @@ export default function Company() {
                 <Link href="#" className="flex items-center gap-2 text-gray-500 hover:text-cyan-400 transition-colors text-xs font-mono tracking-widest group/link">
                   <span className="w-1.5 h-1.5 border border-gray-500 group-hover/link:border-cyan-400 group-hover/link:bg-cyan-400 transition-all"></span>
                   
-                <a 
-                    href="https://www.amazon.co.jp/stores/author/B0H1876FGT?ingress=0&visitId=8cedf0b4-ca13-421c-829b-bfe5a18d1e5a" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="hover:text-cyan-400 transition-colors"
-                  >
-                    □ Amazon Author
-                  </a>
+                  <a 
+                  href="https://www.amazon.co.jp/stores/author/B0H1876FGT?ingress=0&visitId=8cedf0b4-ca13-421c-829b-bfe5a18d1e5a" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-gray-500 hover:text-cyan-400 transition-colors text-xs font-mono tracking-widest group/link"
+                >
+                  <span className="w-1.5 h-1.5 border border-gray-500 group-hover/link:border-cyan-400 group-hover/link:bg-cyan-400 transition-all"></span>
+                  Amazon Author
+                </a>
 
 
                 </Link>
