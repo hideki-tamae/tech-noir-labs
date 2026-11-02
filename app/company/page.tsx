@@ -168,10 +168,6 @@ export default function Company() {
                 <dd className="text-white font-serif tracking-[0.1em]">Tech Noir Labs / Limelien Inc.</dd>
               </div>
               <div className="flex flex-col space-y-1">
-                <dt className="text-gray-600 text-[10px] font-mono uppercase">Founder_&_CEO</dt>
-                <dd className="text-gray-300">田前 秀樹 (Hideki Tamae)</dd>
-              </div>
-              <div className="flex flex-col space-y-1">
                 <dt className="text-gray-600 text-[10px] font-mono uppercase">Base_Location</dt>
                 <dd className="text-gray-300">東京都渋谷区 (Shibuya, Tokyo)</dd>
               </div>
@@ -201,7 +197,7 @@ export default function Company() {
               
               <div className="mb-8">
                 <h4 className="text-2xl text-white font-serif mb-2 tracking-widest">田前 秀樹</h4>
-                <p className="text-cyan-700 text-[10px] tracking-[0.3em] uppercase font-mono">Liberal Arts Architect / Social Entrepreneur</p>
+                <p className="text-cyan-700 text-[10px] tracking-[0.3em] uppercase font-mono">Liberal Arts Architect / Social Entrepreneur / Founder_&_CEO</p>
               </div>
               
               <div className="space-y-6 text-gray-400 text-sm font-light leading-loose tracking-widest">
