@@ -197,7 +197,7 @@ export default function Company() {
               
               <div className="mb-8">
                 <h4 className="text-2xl text-white font-serif mb-2 tracking-widest">田前 秀樹</h4>
-                <p className="text-cyan-700 text-[10px] tracking-[0.3em] uppercase font-mono">Liberal Arts Architect / Social Entrepreneur / Founder_&_CEO</p>
+                <p className="text-cyan-700 text-[10px] tracking-[0.3em] uppercase font-mono">Social Entrepreneur / Founder_&_CEO</p>
               </div>
               
               <div className="space-y-6 text-gray-400 text-sm font-light leading-loose tracking-widest">
