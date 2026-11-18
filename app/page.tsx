@@ -269,8 +269,8 @@ export default function Home() {
               </div>
               <div className="hidden md:block w-[1px] h-10 bg-[#00E5FF]/20"></div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-[#00E5FF] mb-1">2本</div>
-                <div className="text-[10px] md:text-xs text-gray-400 tracking-widest">GitHubで公開中のAI開発</div>
+                <div className="text-2xl md:text-3xl font-bold text-[#00E5FF] mb-1">6本</div>
+                <div className="text-[10px] md:text-xs text-gray-400 tracking-widest">GitHubで公開中のAI関連開発</div>
               </div>
             </div>
           </div>
