@@ -248,29 +248,29 @@ export default function Home() {
           
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-white tracking-tight font-sans mb-8 leading-tight drop-shadow-xl [font-feature-settings:'palt']">
             <span className="block mb-2 md:mb-0 md:inline">「構想」を </span>
-            <span className="block md:inline">「<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00E5FF] to-white">実装</span>」し、「利益」へ。</span>
+            <span className="block md:inline">「<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00E5FF] to-white">実装</span>」し、「成果」へ。</span>
           </h1>
           
           <p className="text-gray-300 text-sm md:text-lg font-light tracking-[0.15em] max-w-3xl mb-12 leading-relaxed">
-            AIと最新のWebアーキテクチャが、あなたのビジネスから<br className="hidden md:block" />
-            一切の非効率を排除し、売上を最大化する。
+            AIと最新のWebアーキテクチャで、あなたのビジネスの<br className="hidden md:block" />
+            非効率を減らし、成果につなげる仕組みを設計・実装する。
           </p>
 
           <div className="mb-12 w-full max-w-2xl">
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 py-5 px-6 border-t border-b border-[#00E5FF]/20 bg-gradient-to-r from-transparent via-[#00E5FF]/5 to-transparent">
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-[#00E5FF] mb-1">50+</div>
-                <div className="text-[10px] md:text-xs text-gray-400 tracking-widest">社のビジネス課題を解決</div>
+                <div className="text-2xl md:text-3xl font-bold text-[#00E5FF] mb-1">13年</div>
+                <div className="text-[10px] md:text-xs text-gray-400 tracking-widest">WEB開発・制作の経験</div>
               </div>
               <div className="hidden md:block w-[1px] h-10 bg-[#00E5FF]/20"></div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-[#00E5FF] mb-1">40%</div>
-                <div className="text-[10px] md:text-xs text-gray-400 tracking-widest">平均売上向上を実現</div>
+                <div className="text-2xl md:text-3xl font-bold text-[#00E5FF] mb-1">9冊</div>
+                <div className="text-[10px] md:text-xs text-gray-400 tracking-widest">書籍を出版（4カ国で刊行）</div>
               </div>
               <div className="hidden md:block w-[1px] h-10 bg-[#00E5FF]/20"></div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-[#00E5FF] mb-1">3ヶ月</div>
-                <div className="text-[10px] md:text-xs text-gray-400 tracking-widest">実装期間で完成</div>
+                <div className="text-2xl md:text-3xl font-bold text-[#00E5FF] mb-1">2本</div>
+                <div className="text-[10px] md:text-xs text-gray-400 tracking-widest">GitHubで公開中のAI開発</div>
               </div>
             </div>
           </div>
@@ -327,56 +327,59 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Case 1 */}
             <div className="bg-[#080808] border border-white/10 p-8 hover:border-cyan-500/30 transition-all duration-300 group">
-              <div className="text-gray-500 text-xs tracking-widest mb-4">Case 01: SaaS Scaling</div>
+              <div className="text-gray-500 text-xs tracking-widest mb-4">Product 01: Engawa</div>
               <h3 className="text-white text-xl font-serif mb-6 group-hover:text-cyan-400 transition-colors">
-                <Term word="認知資本" desc="AIを単なるツールではなく、意志決定を拡張する自律的なパートナーとして組織に実装。" /> の解放
+                Engawa（縁側）｜支援の引き継ぎ
               </h3>
               <div className="space-y-3">
                 <div className="flex justify-between items-center border-b border-white/5 pb-2">
-                  <span className="text-gray-400 text-sm">成果</span>
-                  <span className="text-cyan-400 font-bold tracking-wider">収益成長率 2.3x</span>
+                  <span className="text-gray-400 text-sm">実装</span>
+                  <span className="text-cyan-400 font-bold tracking-wider">Next.js / Cloud Run</span>
                 </div>
                 <div className="flex justify-between items-center pb-2">
-                  <span className="text-gray-400 text-sm">変容</span>
-                  <span className="text-white font-light tracking-wider">自律型収益基盤の確立</span>
+                  <span className="text-gray-400 text-sm">状態</span>
+                  <span className="text-white font-light tracking-wider">ハッカソン提出・GitHub公開</span>
                 </div>
               </div>
+              <a href="https://github.com/hideki-tamae/engawa" target="_blank" rel="noopener noreferrer" className="mt-6 inline-block text-xs tracking-widest text-gray-400 hover:text-cyan-400 transition-colors">GitHubで見る <span className="font-mono">{'>'}</span></a>
             </div>
 
             {/* Case 2 */}
             <div className="bg-[#080808] border border-white/10 p-8 hover:border-cyan-500/30 transition-all duration-300 group">
-              <div className="text-gray-500 text-xs tracking-widest mb-4">Case 02: EC Efficiency</div>
+              <div className="text-gray-500 text-xs tracking-widest mb-4">Product 02: ReleaseKey</div>
               <h3 className="text-white text-xl font-serif mb-6 group-hover:text-cyan-400 transition-colors">
-                <Term word="摩擦ゼロ" desc="非効率な手作業を排除し、人間の創造性が最大限に発揮されるシステムフローを設計。" /> の組織設計
+                ReleaseKey｜AIと人間の承認設計
               </h3>
               <div className="space-y-3">
                 <div className="flex justify-between items-center border-b border-white/5 pb-2">
-                  <span className="text-gray-400 text-sm">成果</span>
-                  <span className="text-cyan-400 font-bold tracking-wider">工数 60% 削減</span>
+                  <span className="text-gray-400 text-sm">実装</span>
+                  <span className="text-cyan-400 font-bold tracking-wider">AIが準備・人間が承認</span>
                 </div>
                 <div className="flex justify-between items-center pb-2">
-                  <span className="text-gray-400 text-sm">変容</span>
-                  <span className="text-white font-light tracking-wider">クリエイティブへの回帰</span>
+                  <span className="text-gray-400 text-sm">状態</span>
+                  <span className="text-white font-light tracking-wider">ETHGlobal Tokyo提出・GitHub公開</span>
                 </div>
               </div>
+              <a href="https://github.com/hideki-tamae/releasekey" target="_blank" rel="noopener noreferrer" className="mt-6 inline-block text-xs tracking-widest text-gray-400 hover:text-cyan-400 transition-colors">GitHubで見る <span className="font-mono">{'>'}</span></a>
             </div>
 
             {/* Case 3 */}
             <div className="bg-[#080808] border border-white/10 p-8 hover:border-cyan-500/30 transition-all duration-300 group">
-              <div className="text-gray-500 text-xs tracking-widest mb-4">Case 03: FinTech Trust</div>
+              <div className="text-gray-500 text-xs tracking-widest mb-4">Product 03: LINE配信基盤</div>
               <h3 className="text-white text-xl font-serif mb-6 group-hover:text-cyan-400 transition-colors">
-                <Term word="信頼の経済学" desc="透明性と改ざん耐性を担保するWeb3構造により、ユーザーとのエンゲージメントを本質的に強化。" /> への移行
+                LINE配信の自動化基盤
               </h3>
               <div className="space-y-3">
                 <div className="flex justify-between items-center border-b border-white/5 pb-2">
-                  <span className="text-gray-400 text-sm">成果</span>
-                  <span className="text-cyan-400 font-bold tracking-wider">ユーザー 10x 拡大</span>
+                  <span className="text-gray-400 text-sm">実装</span>
+                  <span className="text-cyan-400 font-bold tracking-wider">Cloudflare Workers + D1</span>
                 </div>
                 <div className="flex justify-between items-center pb-2">
-                  <span className="text-gray-400 text-sm">変容</span>
-                  <span className="text-white font-light tracking-wider">改ざん不可能な信頼基盤</span>
+                  <span className="text-gray-400 text-sm">状態</span>
+                  <span className="text-white font-light tracking-wider">本番稼働（OSSをベースに拡張）</span>
                 </div>
               </div>
+
             </div>
           </div>
 
@@ -387,7 +390,7 @@ export default function Home() {
             </Link>
             <div className="hidden sm:block w-[1px] h-4 bg-white/20"></div>
             <Link href="https://calendly.com/tamatixyan/40min" target="_blank" className="group flex items-center gap-2 px-6 py-2 border border-cyan-500/30 bg-cyan-500/5 hover:bg-cyan-500/20 text-cyan-400 text-sm tracking-widest transition-all duration-300">
-              自社に同等の成果を実装する <span className="font-mono group-hover:translate-x-1 transition-transform">{'>'}</span>
+              自社の課題を相談する <span className="font-mono group-hover:translate-x-1 transition-transform">{'>'}</span>
             </Link>
           </div>
         </div>
@@ -690,6 +693,21 @@ export default function Home() {
               アーキテクチャ診断を予約する <span className="font-mono ml-2">{'>'}</span>
             </button>
           </Link>
+
+          <p className="mt-10 text-sm md:text-base text-gray-400 tracking-widest font-light">
+            メールでのご相談：
+            <a href="mailto:tamae@technoir-labs.net" className="text-cyan-400 hover:text-cyan-300 underline underline-offset-4 ml-2">tamae@technoir-labs.net</a>
+          </p>
+
+          <div className="mt-16 max-w-2xl mx-auto text-left border-t border-white/10 pt-10">
+            <p className="text-cyan-500 text-xs tracking-[0.3em] uppercase mb-6 font-semibold">Scope &amp; Responsibility｜対応範囲と責任</p>
+            <ul className="space-y-3 text-sm md:text-base text-gray-400 font-light leading-relaxed">
+              <li className="flex items-start gap-3"><span className="text-[#00E5FF] font-mono">/</span><span>納品物：ソースコードと設計ドキュメントをお渡しします。</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#00E5FF] font-mono">/</span><span>責任範囲：契約前に、対応範囲・納期・責任の所在を書面で確認します。</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#00E5FF] font-mono">/</span><span>保守・改善：納品後の対応は、内容に応じて別途ご相談のうえ契約します。</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#00E5FF] font-mono">/</span><span>情報の取り扱い：個人情報・機密情報は、ご相談時にお取り扱いの範囲を確認します。</span></li>
+            </ul>
+          </div>
         </div> 
       </section>
       

@@ -60,7 +60,7 @@ export default function ProofOfArchitecture() {
           <p className="text-gray-400 text-sm md:text-base leading-loose max-w-3xl mx-auto tracking-widest font-light">
             私たちは、不確実な記憶や言葉ではなく、<br className="hidden md:block" />
             自らの手で生み出した堅牢な「<span className="text-cyan-400">プロダクト</span>」と、<br className="hidden md:block" />
-            未来の利益をデザインする「<span className="text-cyan-400">実装モデル</span>」によって、圧倒的な技術力を証明します。
+            想定する成果から逆算した「<span className="text-cyan-400">実装モデル</span>」によって、設計の考え方を示します。
           </p>
         </div>
       </section>
@@ -139,10 +139,10 @@ export default function ProofOfArchitecture() {
           <div className="space-y-10">
             {/* Case 1 */}
             <div className="bg-[#080808] border border-white/5 p-8 md:p-12 hover:border-cyan-500/30 transition-all duration-500 max-w-3xl mx-auto">
-              <p className="text-cyan-600 font-mono text-[10px] mb-2 uppercase">Case_01</p>
+              <p className="text-cyan-600 font-mono text-[10px] mb-2 uppercase">Model_01</p>
               <h3 className="text-2xl text-white font-serif mb-2">B2B SaaS 企業</h3>
               <div className="mb-6">
-                <p className="text-xs text-gray-500 uppercase tracking-widest mb-1">Target ROI</p>
+                <p className="text-xs text-gray-500 uppercase tracking-widest mb-1">想定する成果</p>
                 <p className="text-cyan-400 font-bold tracking-widest text-lg">営業リソースの無限拡張</p>
               </div>
               <div className="pt-6 border-t border-white/10">
@@ -155,10 +155,10 @@ export default function ProofOfArchitecture() {
 
             {/* Case 2 */}
             <div className="bg-[#080808] border border-white/5 p-8 md:p-12 hover:border-cyan-500/30 transition-all duration-500 max-w-3xl mx-auto">
-              <p className="text-cyan-600 font-mono text-[10px] mb-2 uppercase">Case_02</p>
+              <p className="text-cyan-600 font-mono text-[10px] mb-2 uppercase">Model_02</p>
               <h3 className="text-2xl text-white font-serif mb-2">E-Commerce 事業</h3>
               <div className="mb-6">
-                <p className="text-xs text-gray-500 uppercase tracking-widest mb-1">Target ROI</p>
+                <p className="text-xs text-gray-500 uppercase tracking-widest mb-1">想定する成果</p>
                 <p className="text-cyan-400 font-bold tracking-widest text-lg">業務工数の極小化・CVR最大化</p>
               </div>
               <div className="pt-6 border-t border-white/10">
@@ -171,10 +171,10 @@ export default function ProofOfArchitecture() {
 
             {/* Case 3 */}
             <div className="bg-[#080808] border border-white/5 p-8 md:p-12 hover:border-cyan-500/30 transition-all duration-500 max-w-3xl mx-auto">
-              <p className="text-cyan-600 font-mono text-[10px] mb-2 uppercase">Case_03</p>
+              <p className="text-cyan-600 font-mono text-[10px] mb-2 uppercase">Model_03</p>
               <h3 className="text-2xl text-white font-serif mb-2">Healthcare & Clinic</h3>
               <div className="mb-6">
-                <p className="text-xs text-gray-500 uppercase tracking-widest mb-1">Target ROI</p>
+                <p className="text-xs text-gray-500 uppercase tracking-widest mb-1">想定する成果</p>
                 <p className="text-cyan-400 font-bold tracking-widest text-lg">トラストの構築と集客の自動化</p>
               </div>
               <div className="pt-6 border-t border-white/10">
@@ -187,10 +187,10 @@ export default function ProofOfArchitecture() {
 
             {/* Case 4 */}
             <div className="bg-[#080808] border border-white/5 p-8 md:p-12 hover:border-cyan-500/30 transition-all duration-500 max-w-3xl mx-auto">
-              <p className="text-cyan-600 font-mono text-[10px] mb-2 uppercase">Case_04</p>
+              <p className="text-cyan-600 font-mono text-[10px] mb-2 uppercase">Model_04</p>
               <h3 className="text-2xl text-white font-serif mb-2">Digital Assets & IP</h3>
               <div className="mb-6">
-                <p className="text-xs text-gray-500 uppercase tracking-widest mb-1">Target ROI</p>
+                <p className="text-xs text-gray-500 uppercase tracking-widest mb-1">想定する成果</p>
                 <p className="text-cyan-400 font-bold tracking-widest text-lg">無形資産の価値化と世界配信</p>
               </div>
               <div className="pt-6 border-t border-white/10">
@@ -268,7 +268,7 @@ export default function ProofOfArchitecture() {
 <div className="mt-32 pt-20 border-t border-white/5 text-center">
   <h3 className="text-2xl md:text-3xl font-serif text-white mb-6">次は、あなたのビジネスの番です。</h3>
   <p className="text-gray-400 text-sm md:text-base font-light tracking-widest mb-10">
-    圧倒的な成果を生み出すアーキテクチャを、自社に実装する準備はできましたか？
+    成果につながるアーキテクチャを、自社に実装してみませんか。
   </p>
   <Link href="https://calendly.com/tamatixyan/40min" target="_blank" className="inline-flex items-center gap-3 px-10 py-4 bg-cyan-600 hover:bg-cyan-500 text-white text-base font-serif tracking-widest transition-all duration-300 shadow-[0_0_20px_rgba(0,229,255,0.2)] hover:shadow-[0_0_35px_rgba(0,229,255,0.4)] rounded-sm">
     無料アーキテクチャ診断を予約する <span className="font-mono">{'>'}</span>
